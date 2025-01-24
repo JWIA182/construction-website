@@ -5,12 +5,12 @@
     --dark-gray: #333333;
     --mustard-yellow: #FFC107;
     --white: #FFFFFF;
-    --light-gray-bg: #F7F7F7; /* Optional background for sections */
+    --light-gray-bg: #F7F7F7; /* Optional background for some sections */
   }
   
   /* Enable smooth scrolling & scroll snap */
   html {
-    scroll-behavior: smooth; /* Smooth scroll for anchor links */
+    scroll-behavior: smooth; /* Smooth anchor scrolling for desktop */
   }
   
   body {
@@ -19,60 +19,38 @@
     color: var(--dark-gray);
     background-color: var(--white);
   
-    /* Scroll snapping on the body (vertical) */
+    /* Vertical scroll snap: each section locks into place */
     scroll-snap-type: y mandatory; 
     overflow-y: scroll; 
     height: 100vh;
   }
   
-  /* Remove default margin for all elements */
+  /* Reset box-sizing globally */
   * {
     box-sizing: border-box;
   }
   
-  /* Links reset */
   a {
     text-decoration: none;
     color: inherit;
   }
   
-  /* Images */
   img {
     max-width: 100%;
     display: block;
   }
   
-  /* Headings */
   h1, h2, h3, h4 {
     margin-bottom: 0.5em;
     font-weight: normal;
   }
-
-  h2 {
-    font-size: 45px;
-  }
   
-  /* Make h2 responsive */
-  @media (max-width: 768px) {
-    h2 {
-      font-size: 32px;
-    }
-  }
-
-  @media (max-width: 480px) {
-    h2 {
-      font-size: 28px;
-    }
-  }
-
-
   /* ----------------------
      FIXED HEADER / NAV
   ---------------------- */
   .fixed-header {
     position: fixed;
     top: 0;
-    left: 0;
     width: 100%;
     background-color: var(--dark-gray);
     color: var(--white);
@@ -90,15 +68,46 @@
   
   /* Logo */
   .logo {
-    font-size: 1.5rem;
+    font-size: 1.4rem;
     font-weight: bold;
   }
   
+  /* Hamburger Icon (mobile) */
+  .hamburger {
+    display: none;
+    cursor: pointer;
+    flex-direction: column;
+    gap: 5px;
+  }
+  .hamburger .bar {
+    width: 25px;
+    height: 3px;
+    background-color: var(--white);
+    transition: all 0.3s ease;
+  }
+  
+  /* When hamburger is open, transform the bars into an X */
+  .hamburger-open .bar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+  .hamburger-open .bar:nth-child(2) {
+    opacity: 0;
+  }
+  .hamburger-open .bar:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+  
   /* Navigation Menu */
+  .main-nav {
+    display: flex;
+    align-items: center;
+  }
+  
   .nav-menu {
     list-style: none;
     display: flex;
     gap: 1rem;
+    margin-left: 1rem;
   }
   
   .nav-menu li a {
@@ -113,130 +122,38 @@
     border-radius: 4px;
   }
   
-  /* CTA Button in Nav */
-  .cta-button {
-    background-color: var(--mustard-yellow);
-    color: var(--dark-gray);
-    padding: 0.7rem 1rem;
-    border-radius: 4px;
-    font-weight: bold;
-    margin-left: 1rem;
-  }
+  /* If you had a CTA button, it would be here, but it's removed. */
   
-/* Responsive adjustments */
-@media (max-width: 768px) {
-  .nav-bar {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-  }
-  .nav-menu {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  .cta-button {
-    margin: 1rem auto 0;
-  }
-}
-  /* Adjust hero content */
-  .hero-content h1 {
-    font-size: 2rem;
-  }
-  .hero-content p {
-    font-size: 1rem;
-  }
-  .hero-content .hero-cta {
-    padding: 0.6rem 1rem;
-    font-size: 0.9rem;
-  }
-
-  /* Adjust sections */
-  section {
-    padding-top: 60px; /* Adjust for smaller header */
-    padding-left: 0.5rem;
-    padding-right: 0.5rem;
-  }
-
-  /* Adjust services grid */
-  .services-grid {
-    grid-template-columns: 1fr;
-    gap: 1rem;
-  }
-
-  /* Adjust portfolio gallery */
-  .portfolio-gallery {
-    grid-template-columns: 1fr;
-    gap: 0.5rem;
-  }
-
-  /* Adjust testimonials */
-  .testimonial {
-    margin: 1rem 0.5rem;
-  }
-
-  /* Adjust contact form */
-  .contact-form {
-    margin: 1rem 0.5rem;
-  }
-
-/* Further adjustments for very small screens */
-@media (max-width: 480px) {
-  .hero-content h1 {
-    font-size: 1.5rem;
-  }
-  .hero-content p {
-    font-size: 0.9rem;
-  }
-  .hero-content .hero-cta {
-    padding: 0.5rem 0.8rem;
-    font-size: 0.8rem;
-  }
-
-  .services-grid {
-    gap: 0.5rem;
-  }
-
-  .portfolio-gallery {
-    gap: 0.3rem;
-  }
-
-  .testimonial {
-    margin: 0.5rem;
-  }
-
-  .contact-form {
-    margin: 0.5rem;
-  }
-}
   /* ----------------------
-     SECTIONS
+     SCROLL SNAPPING SECTIONS
   ---------------------- */
-  
-  /* Each section is a full-screen snap section */
   section {
-    scroll-snap-align: start;      /* Snap at the start of each section */
-    min-height: 100vh;            /* Full viewport height */
+    scroll-snap-align: start; 
+    min-height: 100vh; /* Full viewport height */
     width: 100%;
-    padding-top: 80px;            /* Offset for fixed header (approx. nav height) */
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    text-align: center;
+  
+    /* Offset so content isn't hidden behind fixed header */
+    padding-top: 80px; 
     padding-left: 1rem;
     padding-right: 1rem;
+    text-align: center;
   }
   
-  /* HOME / HERO SECTION */
+  .section-content {
+    max-width: 900px;
+    margin: 0 auto;
+  }
+  
+  /* HOME / HERO */
   #home {
     background-color: var(--dark-gray);
     color: var(--white);
   }
   
-  /* Hero Content */
   .hero-content {
     max-width: 800px;
     margin: 0 auto;
@@ -259,88 +176,48 @@
     font-size: 1rem;
     border-radius: 4px;
     font-weight: bold;
-    display: inline-block;
-    margin-top: 1rem;
   }
   
   /* ABOUT */
   #about {
     background-color: var(--light-gray-bg);
   }
-
-  .about-wrapper {
-    max-width: 600px;
-    margin: 0 auto;
-    line-height: 1.5;
+  
+  /* SERVICES */
+  #services {
+    background-color: var(--white);
   }
   
-/* SERVICES */
-#services {
-  background-color: var(--white);
-}
-
-/* Services grid */
-.services-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 1.5rem;
-  max-width: 1200px;
-  margin: 2rem auto 0;
-  text-align: left;
-}
-
-.service-box {
-  background-color: var(--white);
-  border: 1px solid #ddd;
-  border-radius: 4px;
-  padding: 1.5rem;
-  text-align: center;
-}
-
-/* PORTFOLIO */
-#portfolio {
-  background-color: var(--light-gray-bg);
-}
-
-/* Portfolio gallery */
-.portfolio-gallery {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 1rem;
-  max-width: 1200px;
-  margin: 2rem auto 0;
-}
-
-.portfolio-gallery img {
-  border: 2px solid #eee;
-  border-radius: 4px;
-}
-
-/* Responsive adjustments */
-@media (max-width: 768px) {
-  /* Adjust services grid */
   .services-grid {
-    grid-template-columns: 1fr;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+  }
+  
+  .service-box {
+    background-color: var(--white);
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 1rem;
+  }
+  
+  /* PROJECTS */
+  #projects {
+    background-color: var(--light-gray-bg);
+  }
+  
+  .portfolio-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
     gap: 1rem;
+    margin-top: 2rem;
   }
-
-  /* Adjust portfolio gallery */
-  .portfolio-gallery {
-    grid-template-columns: 1fr;
-    gap: 0.5rem;
+  
+  .portfolio-gallery img {
+    border: 2px solid #eee;
+    border-radius: 4px;
   }
-}
-
-/* Further adjustments for very small screens */
-@media (max-width: 480px) {
-  .services-grid {
-    gap: 0.5rem;
-  }
-
-  .portfolio-gallery {
-    gap: 0.3rem;
-  }
-}
   
   /* TESTIMONIALS */
   #testimonials {
@@ -366,7 +243,6 @@
     background-color: var(--light-gray-bg);
   }
   
-  /* Contact Form */
   .contact-form {
     max-width: 600px;
     margin: 2rem auto 0;
@@ -407,5 +283,44 @@
   footer p {
     margin: 0.5rem 0;
     font-size: 0.9rem;
+  }
+  
+  /* ----------------------
+     MEDIA QUERIES
+  ---------------------- */
+  @media (max-width: 768px) {
+    /* Show the hamburger icon on mobile */
+    .hamburger {
+      display: flex;
+    }
+    /* Hide the main nav unless toggled */
+    .main-nav {
+      position: absolute;
+      top: 64px; /* slightly below the header */
+      right: 0;
+      background-color: var(--dark-gray);
+      width: 200px;
+      padding: 1rem;
+      border-radius: 4px 0 0 4px;
+      display: none; /* hidden by default */
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    /* When .nav-open is toggled, show nav */
+    .nav-open {
+      display: flex !important;
+    }
+    .nav-menu {
+      flex-direction: column;
+      gap: 1rem;
+    }
+  
+    /* Adjust hero text */
+    .hero-content h1 {
+      font-size: 2rem;
+    }
+    .hero-content p {
+      font-size: 1rem;
+    }
   }
   

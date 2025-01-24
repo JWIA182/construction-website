@@ -9,120 +9,140 @@
 </head>
 <body>
 
-  <!-- HEADER (Fixed Nav) -->
+  <!-- FIXED HEADER (Navigation) -->
   <header class="fixed-header">
     <div class="nav-bar">
       <!-- Logo -->
       <div class="logo">R+F Construction</div>
+      
+      <!-- Hamburger Icon (visible on mobile) -->
+      <div class="hamburger" id="hamburger">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </div>
+
       <!-- Navigation Menu -->
-      <nav>
+      <nav class="main-nav" id="nav-menu">
         <ul class="nav-menu">
           <li><a href="#home">Home</a></li>
           <li><a href="#about">About</a></li>
           <li><a href="#services">Services</a></li>
-          <li><a href="#portfolio">Projects</a></li>
+          <li><a href="#projects">Projects</a></li>
           <li><a href="#testimonials">Testimonials</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
       </nav>
-      <!-- Call-to-Action Button -->
-      <a href="#contact" class="cta-button">Get a Free Quote</a>
     </div>
   </header>
 
-  <!-- HOME (Hero) -->
+  <!-- HOME (Hero) Section -->
   <section id="home">
     <div class="hero-content">
       <h1>Quality Renovations from Start to Finish</h1>
-      <p>We specialize in complete home remodeling, including kitchens, bathrooms, painting, roofing, and more.</p>
+      <p>Kitchen & Bathroom Installations, Loft Conversions, Painting, and More</p>
       <a href="#contact" class="hero-cta">Contact Us Today</a>
     </div>
   </section>
 
-  <!-- ABOUT -->
+  <!-- ABOUT Section -->
   <section id="about">
-    <h2>About Us</h2>
-    <div class="about-wrapper">
+    <div class="section-content">
+      <h2>About Us</h2>
       <p>
-        R+F Construction is a trusted remodeling and renovation company with years of 
-        experience in delivering top-quality services. We pride ourselves on our craftsmanship 
-        and commitment to customer satisfaction.
+        R+F Construction is a trusted remodeling and renovation company 
+        with years of experience in delivering top-quality services. 
+        We pride ourselves on our craftsmanship and commitment 
+        to customer satisfaction.
+      </p>
+      <p>
+        Whether you need a kitchen overhaul, bathroom upgrade, or a full-scale renovation, 
+        our expert team is here to bring your vision to life.
+      </p>
+      <p>
+        We also issue all necessary certificates and guarantees, ensuring your property 
+        meets professional standards every step of the way.
       </p>
     </div>
   </section>
 
-  <!-- SERVICES -->
+  <!-- SERVICES Section -->
   <section id="services">
-    <h2>Our Services</h2>
-    <p>
-      We cover everything from kitchen and bathroom installations to painting, plumbing, and loft conversions. 
-      We’re your one-stop shop for all renovation needs.
-    </p>
-    <div class="services-grid">
-      <div class="service-box">
-        <h3>Kitchen Installations</h3>
-        <p>Modern designs, expert assembly, and flawless finishes.</p>
-      </div>
-      <div class="service-box">
-        <h3>Bathroom Installations</h3>
-        <p>From tiling to fixtures, we create your ideal bathroom.</p>
-      </div>
-      <div class="service-box">
-        <h3>Plastering & Painting</h3>
-        <p>Smooth walls and impeccable paintwork for a perfect finish.</p>
-      </div>
-      <div class="service-box">
-        <h3>Plumbing & Electrical</h3>
-        <p>Certified, safe, and reliable work in every installation.</p>
-      </div>
-      <div class="service-box">
-        <h3>Roofing & Insulation</h3>
-        <p>Protect your home and save on energy costs.</p>
-      </div>
-      <div class="service-box">
-        <h3>Loft Conversions</h3>
-        <p>Maximize space with beautiful, functional loft solutions.</p>
+    <div class="section-content">
+      <h2>Our Services</h2>
+      <p>We offer a complete range of renovation and construction services.</p>
+      <div class="services-grid">
+        <div class="service-box">
+          <h3>Kitchen Installations</h3>
+          <p>Expert assembly and stunning finishes.</p>
+        </div>
+        <div class="service-box">
+          <h3>Bathroom Installations</h3>
+          <p>Modern designs and quality fixtures.</p>
+        </div>
+        <div class="service-box">
+          <h3>Plastering & Painting</h3>
+          <p>Flawless walls and impeccable paintwork.</p>
+        </div>
+        <div class="service-box">
+          <h3>Plumbing & Electrical</h3>
+          <p>Certified, safe, and reliable services.</p>
+        </div>
+        <div class="service-box">
+          <h3>Roofing & Insulation</h3>
+          <p>Protect your home and reduce energy costs.</p>
+        </div>
+        <div class="service-box">
+          <h3>Loft Conversions</h3>
+          <p>Maximize space with functional loft solutions.</p>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- PORTFOLIO / GALLERY -->
-  <section id="portfolio">
-    <h2>Recent Projects</h2>
-    <p>Check out some of our latest work. We take pride in every project, big or small.</p>
-    <div class="portfolio-gallery">
-      <img src="https://via.placeholder.com/300x200" alt="Project 1">
-      <img src="https://via.placeholder.com/300x200" alt="Project 2">
-      <img src="https://via.placeholder.com/300x200" alt="Project 3">
-      <img src="https://via.placeholder.com/300x200" alt="Project 4">
+  <!-- PROJECTS Section -->
+  <section id="projects">
+    <div class="section-content">
+      <h2>Recent Projects</h2>
+      <p>Take a look at some of our work. We pride ourselves on quality and attention to detail.</p>
+      <div class="portfolio-gallery">
+        <img src="https://via.placeholder.com/300x200" alt="Project 1">
+        <img src="https://via.placeholder.com/300x200" alt="Project 2">
+        <img src="https://via.placeholder.com/300x200" alt="Project 3">
+        <img src="https://via.placeholder.com/300x200" alt="Project 4">
+      </div>
     </div>
   </section>
 
-  <!-- TESTIMONIALS -->
+  <!-- TESTIMONIALS Section -->
   <section id="testimonials">
-    <h2>What Our Clients Say</h2>
-    <div class="testimonial">
-      <p>"R+F Construction renovated our kitchen beautifully and on time! Highly recommend."</p>
-      <strong>- Anna K.</strong>
-    </div>
-    <div class="testimonial">
-      <p>"Professional team, attention to detail, and fantastic results. Will use them again."</p>
-      <strong>- Michael T.</strong>
+    <div class="section-content">
+      <h2>What Our Clients Say</h2>
+      <div class="testimonial">
+        <p>"R+F Construction renovated our kitchen beautifully and on time! Highly recommend."</p>
+        <strong>- Anna K.</strong>
+      </div>
+      <div class="testimonial">
+        <p>"Professional team, attention to detail, and fantastic results. Will use them again."</p>
+        <strong>- Michael T.</strong>
+      </div>
     </div>
   </section>
 
-  <!-- CONTACT -->
+  <!-- CONTACT Section -->
   <section id="contact">
-    <h2>Get in Touch</h2>
-    <p>Ready to start your next project? Contact us today for a free quote or more information.</p>
-    <div class="contact-form">
-      <form action="#" method="POST">
-        <input type="text" name="name" placeholder="Your Name" required>
-        <input type="email" name="email" placeholder="Your Email" required>
-        <input type="tel" name="phone" placeholder="Your Phone Number" required>
-        <textarea name="message" rows="5" placeholder="How can we help?" required></textarea>
-        <button type="submit">Send Message</button>
-      </form>
+    <div class="section-content">
+      <h2>Get in Touch</h2>
+      <p>Ready to start your next project? Contact us today for a free quote or more information.</p>
+      <div class="contact-form">
+        <form action="#" method="POST">
+          <input type="text" name="name" placeholder="Your Name" required>
+          <input type="email" name="email" placeholder="Your Email" required>
+          <input type="tel" name="phone" placeholder="Your Phone Number" required>
+          <textarea name="message" rows="5" placeholder="How can we help?" required></textarea>
+          <button type="submit">Send Message</button>
+        </form>
+      </div>
     </div>
   </section>
 
@@ -131,6 +151,17 @@
     <p>R+F Construction | Complete Renovations & Installations</p>
     <p>&copy; 2025 R+F Construction. All rights reserved.</p>
   </footer>
+
+  <!-- Minimal JavaScript for Hamburger Menu Toggle -->
+  <script>
+    const hamburger = document.getElementById('hamburger');
+    const navMenu = document.getElementById('nav-menu');
+
+    hamburger.addEventListener('click', () => {
+      navMenu.classList.toggle('nav-open');
+      hamburger.classList.toggle('hamburger-open');
+    });
+  </script>
 
 </body>
 </html>
