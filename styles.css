@@ -256,12 +256,29 @@ section {
 
 /* Make the heading slightly bolder */
 #services h2 {
-  font-size: 2.2rem;
+  font-size: 2.5rem;
   color: var(--primary-blue);
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 1px;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  position: relative;
 }
+
+#services h2::after {
+  content: "";
+  display: block;
+  width: 80px;
+  height: 4px;
+  background-color: var(--accent-gold);
+  margin: 10px auto 0;
+  border-radius: 2px;
+}
+
+#services p.services-little-text {
+  font-size: 1.3rem;
+  line-height: 1.8;
+  text-align: center;
+}
+
 
 .services-grid {
   display: grid;
@@ -296,36 +313,92 @@ section {
   background-color: var(--secondary-gray);
 }
 
+#projects h2 {
+  font-size: 2.5rem;
+  color: var(--primary-blue);
+  font-weight: 700;
+  margin-bottom: 1rem;
+  position: relative;
+}
+
+#projects h2::after {
+  content: "";
+  display: block;
+  width: 80px;
+  height: 4px;
+  background-color: var(--accent-gold);
+  margin: 10px auto 0;
+  border-radius: 2px;
+}
+
+#projects p {
+  font-size: 1.3rem;
+  line-height: 1.8;
+  text-align: center;
+}
+
+/* Make images bigger on PC */
 .portfolio-gallery {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Bigger images */
+  gap: 1.5rem;
   margin-top: 2rem;
 }
 
 .portfolio-gallery img {
-  width: 100%;         
-  height: 200px;       
-  object-fit: cover;   
+  width: 100%;
+  height: 250px; /* Increased height */
+  object-fit: cover;
   border: 2px solid #eee;
   border-radius: 6px;
-  
-  /* Smooth transition effect */
   transition: transform 0.3s ease-in-out;
 }
 
-/* Zoom in on hover */
+/* Hover effect for a smooth zoom */
 .portfolio-gallery img:hover {
-  transform: scale(1.05);  
+  transform: scale(1.05);
 }
 
 /* Reverse zoom effect when hover stops */
 .portfolio-gallery img:not(:hover) {
   transform: scale(1);  
 }
+
+/* Keep images smaller on mobile */
+@media (max-width: 768px) {
+  .portfolio-gallery img {
+    height: 200px; /* Slightly smaller for mobile */
+  }
+}
+
+
 /* CONTACT */
 #contact {
   background-color: var(--white);
+}
+
+#contact h2 {
+  font-size: 2.5rem;
+  color: var(--primary-blue);
+  font-weight: 700;
+  margin-bottom: 1rem;
+  position: relative;
+}
+
+#contact h2::after {
+  content: "";
+  display: block;
+  width: 80px;
+  height: 4px;
+  background-color: var(--accent-gold);
+  margin: 10px auto 0;
+  border-radius: 2px;
+}
+
+#contact p {
+  font-size: 1.3rem;
+  line-height: 1.8;
+  text-align: center;
 }
 
 .contact-form {
