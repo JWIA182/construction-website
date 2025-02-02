@@ -29,13 +29,9 @@
           <li><a href="#about">About</a></li>
           <li><a href="#services">Services</a></li>
           <li><a href="#projects">Projects</a></li>
-          <li><a href="#testimonials">Testimonials</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
       </nav>
-
-      <!-- CTA Button (desktop only) -->
-      <a href="#contact" class="cta-button">Get a Free Quote</a>
     </div>
   </header>
 
@@ -117,34 +113,16 @@
     </div>
   </section>
 
-  <!-- TESTIMONIALS Section -->
-  <section id="testimonials">
-    <div class="section-content">
-      <h2>What Our Clients Say</h2>
-      <div class="testimonial">
-        <p>"R+F Construction renovated our kitchen beautifully and on time! Highly recommend."</p>
-        <strong>- Anna K.</strong>
-      </div>
-      <div class="testimonial">
-        <p>"Professional team, attention to detail, and fantastic results. Will use them again."</p>
-        <strong>- Michael T.</strong>
-      </div>
-    </div>
-  </section>
-
   <!-- CONTACT Section -->
   <section id="contact">
     <div class="section-content">
       <h2>Get in Touch</h2>
       <p>Ready to start your next project? Contact us today for a free quote or more information.</p>
-      <div class="contact-form">
-        <form action="#" method="POST">
-          <input type="text" name="name" placeholder="Your Name" required>
-          <input type="email" name="email" placeholder="Your Email" required>
-          <input type="tel" name="phone" placeholder="Your Phone Number" required>
-          <textarea name="message" rows="5" placeholder="How can we help?" required></textarea>
-          <button type="submit">Send Message</button>
-        </form>
+      <div class="map-container">
+        <p><iframe src="https://www.google.com/maps/embed?pb=!1m17!1m8!1m3!1d311180.40155843145!2d-2.1138802166993576!3d52.45927274457026!3m2!1i1024!2i768!4f13.1!4m6!3e3!4m3!3m2!1d52.3759343!2d-1.9092599!4m0!5e0!3m2!1sen!2suk!4v1738500235650!5m2!1sen!2suk" 
+          width="600" height="450" style="border:0;" 
+          allowfullscreen="" loading="lazy" 
+          referrerpolicy="no-referrer-when-downgrade"></iframe></p>
       </div>
     </div>
   </section>
@@ -157,13 +135,24 @@
 
   <!-- Minimal JavaScript for Hamburger Menu Toggle & Slide-in Animation -->
   <script>
+
     const hamburger = document.getElementById('hamburger');
     const navMenu = document.getElementById('nav-menu');
+    const navLinks = document.querySelectorAll('.nav-menu a');
 
     hamburger.addEventListener('click', () => {
       navMenu.classList.toggle('nav-open');
       hamburger.classList.toggle('hamburger-open');
     });
+
+    // Close menu when clicking a link
+    navLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        navMenu.classList.remove('nav-open');
+        hamburger.classList.remove('hamburger-open');
+      });
+});
+
   </script>
 
 </body>
