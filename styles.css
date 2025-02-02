@@ -6,7 +6,7 @@
   --secondary-gray: #ECECEC;        /* Secondary: Cool Gray (background sections) */
   --accent-gold: #D4AF37;           /* Accent: Muted Gold (highlights, hover effects) */
   --text-dark: #333333;             /* Text: Dark Charcoal (body text) */
-  --darker-nav: #004080;            /* For header background, set to Primary Deep Blue */
+  --darker-nav: #023466;            /* For header background, set to Primary Deep Blue */
   --white: #ffffff;                /* Optional: white background if needed */
 }
 
@@ -87,9 +87,10 @@ h1, h2, h3, h4 {
 .hamburger .bar {
   width: 25px;
   height: 3px;
-  background-color: var(--white);
+  background-color: var(--white); /* Change to gold */
   transition: all 0.3s ease;
 }
+
 
 /* When hamburger is open, transform the bars into an X */
 .hamburger-open .bar:nth-child(1) {
@@ -157,21 +158,27 @@ section {
 #home {
   background-color: var(--primary-blue);
   color: var(--white);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  height: 100vh; /* Full-screen height */
+  padding: 2rem;
 }
 
 .hero-content {
   max-width: 800px;
   margin: 0 auto;
+  text-align: center;
 }
 
 .hero-content h1 {
-  font-size: 2.5rem;
+  font-size: 3rem;
   margin-bottom: 1rem;
-  color: var(--white);
 }
 
 .hero-content p {
-  font-size: 1.1rem;
+  font-size: 1.4rem;
   margin-bottom: 2rem;
 }
 
@@ -179,33 +186,86 @@ section {
   display: inline-block;
   background-color: var(--accent-gold);
   color: var(--text-dark);
-  padding: 1rem 2rem; /* Increased padding */
-  font-size: 1.2rem;
+  padding: 1rem 2rem;
+  font-size: 1.3rem;
   border-radius: 6px;
   font-weight: bold;
+  text-decoration: none;
   transition: background 0.3s ease, transform 0.2s ease;
-
 }
 
 .hero-cta:hover {
   background-color: #b08968;
-  transform: scale(1.1);
+  transform: scale(1.05);
 }
-
 /* ABOUT */
+/* Make About Us section bigger */
+/* Make About Us section bigger & centered */
 #about {
   background-color: var(--secondary-gray);
+  padding: 5rem 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center; /* Center text */
 }
 
+/* Expand text area & add subtle styling */
+#about .section-content {
+  max-width: 900px; /* Keep it readable */
+  margin: 0 auto;
+}
+
+/* Bigger heading for emphasis */
+#about h2 {
+  font-size: 2.5rem;
+  color: var(--primary-blue);
+  font-weight: 700;
+  margin-bottom: 1rem;
+  position: relative;
+}
+
+/* Add a subtle underline effect to the heading */
+#about h2::after {
+  content: "";
+  display: block;
+  width: 80px;
+  height: 4px;
+  background-color: var(--accent-gold);
+  margin: 10px auto 0;
+  border-radius: 2px;
+}
+
+/* Bigger and better-spaced text */
+#about p {
+  font-size: 1.3rem;
+  line-height: 1.8;
+  text-align: center;
+}
+
+
 /* SERVICES */
+/* Make Services section stand out */
+/* Slightly enhance the Services section */
 #services {
-  background-color: var(--white);
-  padding-bottom: 10px;
+  background-color: var(--white); /* Very light gray for a subtle contrast */
+  padding: 4rem 1rem;
+  text-align: center;
+}
+
+/* Make the heading slightly bolder */
+#services h2 {
+  font-size: 2.2rem;
+  color: var(--primary-blue);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
 .services-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  grid-template-columns: repeat(2, 1fr); /* Two columns */
   gap: 1.5rem;
   margin-top: 2rem;
 }
@@ -213,8 +273,22 @@ section {
 .service-box {
   background-color: var(--white);
   border: 1px solid #ddd;
-  border-radius: 4px;
-  padding: 1rem;
+  border-radius: 8px;
+  padding: 1.5rem;
+  transition: transform 0.2s ease, box-shadow 0.3s ease;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+}
+
+.service-box:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* For mobile screens, keep it single column */
+@media (max-width: 768px) {
+  .services-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 /* PROJECTS */
